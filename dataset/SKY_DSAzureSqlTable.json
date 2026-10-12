@@ -1,0 +1,12 @@
+{
+	"name": "SKY_DSAzureSqlTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SKYAzureSqlDatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
