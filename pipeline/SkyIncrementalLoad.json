@@ -28,6 +28,56 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Lookup_watermark_table",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup_watermark_table').output.value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "InnerLookup",
+							"type": "Lookup",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"sqlReaderQuery": {
+										"value": "@concat('select max(',  item().watermark_column,   ') AS max_date from ' ,item().table_name)",
+										"type": "Expression"
+									},
+									"queryTimeout": "00:10:00",
+									"isolationLevel": "ReadUncommitted",
+									"partitionOption": "None"
+								},
+								"dataset": {
+									"referenceName": "SKY_DSAzureSqlTable",
+									"type": "DatasetReference"
+								}
+							}
+						}
+					]
+				}
 			}
 		],
 		"annotations": []
