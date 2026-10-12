@@ -1,0 +1,10 @@
+{
+	"name": "SkyAzureKeyVaultLS",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://skyadfkeyvault.vault.azure.net/"
+		}
+	}
+}
