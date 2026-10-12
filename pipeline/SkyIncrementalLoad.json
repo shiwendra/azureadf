@@ -177,7 +177,7 @@
 												"name": "watermark_value",
 												"type": "Datetime",
 												"value": {
-													"value": "@activity('InnerLookup').output.firstRow",
+													"value": "@activity('InnerLookup').output.firstRow.max_date",
 													"type": "Expression"
 												},
 												"direction": "Input"
