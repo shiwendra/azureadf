@@ -1,0 +1,31 @@
+{
+	"name": "sky_ds_Generic_Sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SkyAzureBlobStorageLS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"fileName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat(dataset().fileName,'/',utcNow(),'.csv')",
+					"type": "Expression"
+				},
+				"container": "rwadata"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
