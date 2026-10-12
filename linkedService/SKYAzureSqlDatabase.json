@@ -1,0 +1,23 @@
+{
+	"name": "SKYAzureSqlDatabase",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "mydevserveradventureworks.database.windows.net",
+			"database": "adventureworks",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "dbadmin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "SkyAzureKeyVaultLS",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sql"
+			}
+		}
+	}
+}
