@@ -1,0 +1,25 @@
+{
+	"name": "skysqlSourceDataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azureSqlDatabaseLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tableSchema": {
+				"type": "string"
+			},
+			"tableName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "Address"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

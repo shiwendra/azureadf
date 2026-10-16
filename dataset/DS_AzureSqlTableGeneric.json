@@ -1,0 +1,13 @@
+{
+	"name": "DS_AzureSqlTableGeneric",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azureSqlDatabaseLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
