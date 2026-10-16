@@ -1,0 +1,17 @@
+{
+	"name": "AzureSqlTableDataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azureSqlDatabaseLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SalesLT",
+			"table": "Employee"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
